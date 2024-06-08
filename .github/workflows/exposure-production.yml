@@ -25,6 +25,9 @@ jobs:
           password: ${{ secrets.TOKEN }}
 
       - name: Build api image
+        env:
+          USERNAME: ${{ secrets.USERNAME }}
+          TOKEN: ${{ secrets.TOKEN }}
         uses: docker/build-push-action@v5
         with:
           push: true
